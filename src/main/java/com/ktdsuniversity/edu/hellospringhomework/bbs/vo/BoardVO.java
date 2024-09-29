@@ -1,16 +1,18 @@
 package com.ktdsuniversity.edu.hellospringhomework.bbs.vo;
 
+// 게시글을 표현하는 VO(Value Object) 클래스
 public class BoardVO {
-    private int id;
-    private String subject;
-    private String content;
-    private String email;
-    private int viewCnt;
-    private String crtDt;
-    private String mdfyDt;
-    private String fileName;
-    private String originFileName;
+    private int id; // 게시글 ID
+    private String subject; // 게시글 제목
+    private String content; // 게시글 내용
+    private String email; // 이메일
+    private int viewCnt; // 조회수
+    private String crtDt; // 생성 날짜
+    private String mdfyDt; // 수정 날짜
+    private String fileName; // 파일 이름
+    private String originFileName; // 원본 파일 이름
 
+    // 게터, 세터 메서드 정의
     public int getId() {
         return id;
     }
