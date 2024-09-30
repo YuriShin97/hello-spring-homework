@@ -7,28 +7,16 @@ div.grid {
     row-gap: 10px;
 }
 
+div.grid-view-board{
+    grid-template-rows: repeat(5, 28px) 320px 1fr;
+}
+
 div.grid > div.btn-group {
     display: grid;
     grid-column: 1 / -1;
 }
 
 div.grid div.right-align {
-    text-align: right;
-}
-
-div.grid2{
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    grid-template-rows: repeat(5, 28px) 320px 1fr;
-    row-gap: 10px;
-}
-
-div.grid2 > div.btn-group {
-    display: grid;
-    grid-column: 1 / -1;
-}
-
-div.grid2 div.right-align {
     text-align: right;
 }
 

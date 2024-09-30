@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="/css/common.css">
 </head>
 <body>
-    <div class="grid2">
+    <div class="grid grid-view-board">
         <label for="subject">제목</label>
         <div>${boardVO.subject}</div>
         <label for="email">이메일</label>
