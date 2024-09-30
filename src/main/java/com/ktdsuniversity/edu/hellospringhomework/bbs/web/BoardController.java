@@ -1,15 +1,17 @@
 package com.ktdsuniversity.edu.hellospringhomework.bbs.web;
 
-import com.ktdsuniversity.edu.hellospringhomework.bbs.service.BoardService;
-import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.BoardListVO;
-import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.BoardVO;
-import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.WriteBoardVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.ktdsuniversity.edu.hellospringhomework.bbs.service.BoardService;
+import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.BoardListVO;
+import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.BoardVO;
+import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.WriteBoardVO;
 
 // 컨트롤러 선언하고 스프링에 등록
 @Controller
@@ -61,5 +63,14 @@ public class BoardController {
 
         // 해당 게시글 보기 화면으로 넘어감
         return "board/boardview";
+    }
+    
+    @GetMapping("/board/view")
+    public String viewOneBoardTwo(@RequestParam int id, Model model) {
+    	
+    	BoardVO boardVO = this.boardService.selectOneBoard(id);
+    	model.addAttribute("boardVO", boardVO);
+    	
+    	return "board/boardview";
     }
 }
