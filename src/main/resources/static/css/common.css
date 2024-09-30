@@ -19,7 +19,7 @@ div.grid div.right-align {
 div.grid2{
     display: grid;
     grid-template-columns: 80px 1fr;
-    grid-template-rows: 28px 28px 28px 28px 320px 1fr;
+    grid-template-rows: 28px 28px 28px 28px 28px 320px 1fr;
     row-gap: 10px;
 }
 
