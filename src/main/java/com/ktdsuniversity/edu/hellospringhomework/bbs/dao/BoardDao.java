@@ -1,9 +1,10 @@
 package com.ktdsuniversity.edu.hellospringhomework.bbs.dao;
 
-import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.BoardVO;
-import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.WriteBoardVO;
-
 import java.util.List;
+
+import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.BoardVO;
+import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.ModifyBoardVO;
+import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.WriteBoardVO;
 
 // 게시판 관련 동작을 정의한 DAO 인터페이스
 public interface BoardDao {
@@ -22,4 +23,10 @@ public interface BoardDao {
 
 	// 특정 ID를 가진 게시글의 정보를 반환하는 메서드 정의
 	public BoardVO selectOneBoard(int id);
+	
+	// 특정 ID를 가진 게시글을 업데이트 하는 메서드 정의 
+	public int updateOneBoard(ModifyBoardVO modifyBoardVO);
+	
+	// 특정 ID를 가진 게시글을 삭제하는 메서드 정의
+	public int deleteOneBoard(int id);
 }

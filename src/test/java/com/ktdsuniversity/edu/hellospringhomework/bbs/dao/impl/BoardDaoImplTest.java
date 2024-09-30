@@ -63,7 +63,7 @@ public class BoardDaoImplTest {
     @Test
     public void testUpdateViewCount(){
         int boardId = 4; // 테스트할 게시글 ID
-
+        
         // 조회수를 증가시키기 전 해당 게시글 정보를 가져옵니다.
         BoardVO beforeIncreaseViewCount = this.boardDao.selectOneBoard(boardId);
         int viewBeforeIncrease = beforeIncreaseViewCount.getViewCnt(); // 증가 전 조회수를 저장한다.

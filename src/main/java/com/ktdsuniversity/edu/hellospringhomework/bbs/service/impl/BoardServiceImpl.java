@@ -4,6 +4,7 @@ import com.ktdsuniversity.edu.hellospringhomework.bbs.dao.BoardDao;
 import com.ktdsuniversity.edu.hellospringhomework.bbs.service.BoardService;
 import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.BoardListVO;
 import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.BoardVO;
+import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.ModifyBoardVO;
 import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.WriteBoardVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,16 +38,35 @@ public class BoardServiceImpl implements BoardService {
 
     // 하나의 게시글을 선택하는 메소드
     @Override
-    public BoardVO selectOneBoard(int id) {
-        // 조회수를 증가시킴
+    public BoardVO selectOneBoard(int id, boolean isIncrease) {
+        
+    	if(isIncrease) {
+    	// 조회수를 증가시킴
         int updateCount = boardDao.updateViewCount(id);
 
         // 조회수를 증가시킨 수가 0이면 예외를 던짐
         if (updateCount == 0) {
             throw new IllegalStateException("잘못된 접근입니다.");
-        }
+        	}
+    	}
         // 해당 id의 게시글 정보 가져옴
         BoardVO boardVO = this.boardDao.selectOneBoard(id);
+        if(boardVO == null) {
+        	throw new IllegalArgumentException("잘못된 접근입니다.");
+        }
         return boardVO;
+    }
+    
+    @Override
+    public boolean updateOneBoard(ModifyBoardVO modifyBoardVO) {
+    	int updateCount = this.boardDao.updateOneBoard(modifyBoardVO);
+    	
+    	return updateCount > 0;
+    }
+    
+    @Override
+    public boolean deleteOneBoard(int id) {
+    	int deleteCount = boardDao.deleteOneBoard(id);
+    	return deleteCount > 0;
     }
 }

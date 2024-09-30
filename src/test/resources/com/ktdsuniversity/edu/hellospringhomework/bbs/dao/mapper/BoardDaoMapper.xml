@@ -72,4 +72,13 @@
          WHERE ID = #{_parameter}
         <!-- 특정 ID를 가진 게시글을 선택해서 BoardVO에 매핑함 -->
     </select>
+    <update id="updateOneBoard"
+    		parameterType="com.ktdsuniversity.edu.hellospringhomework.bbs.vo.ModifyBoardVO">
+    	UPDATE BOARD
+    	   SET SUBJECT = #{subject}
+    	     , CONTENT = #{content}
+    	     , EMAIL = #{email}
+    	     , MDFY_DT = SYSDATE
+    	 WHERE ID = #{id}
+    </update>
 </mapper>

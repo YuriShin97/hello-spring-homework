@@ -2,6 +2,7 @@ package com.ktdsuniversity.edu.hellospringhomework.bbs.service;
 
 import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.BoardListVO;
 import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.BoardVO;
+import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.ModifyBoardVO;
 import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.WriteBoardVO;
 
 // 게시판 관련 서비스를 정의한 인터페이스
@@ -13,5 +14,11 @@ public interface BoardService {
     public boolean createNewBoard(WriteBoardVO writeBoardVO);
 
     // 특정 게시글을 가져오는 메소드를 정의함
-    public BoardVO selectOneBoard(int id);
+    public BoardVO selectOneBoard(int id, boolean isIncrease);
+    
+    // 특정 게시글을 수정하는 메소드를 정의함.
+    public boolean updateOneBoard(ModifyBoardVO modifyBoardVO);
+    
+    // 특정 게시글을 삭제하는 메소드를 정의함.
+    public boolean deleteOneBoard(int id);
 }

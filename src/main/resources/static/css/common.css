@@ -1,43 +1,80 @@
 @charset "UTF-8";
 
 div.grid {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    grid-template-rows: 28px 28px 320px 1fr;
-    row-gap: 10px;
+	display: grid;
+	grid-template-columns: 80px 1fr;
+	grid-template-rows: 28px 28px 320px 1fr;
+	row-gap: 10px;
 }
 
-div.grid-view-board{
-    grid-template-rows: repeat(5, 28px) 320px 1fr;
+div.grid-view-board {
+	grid-template-rows: repeat(5, 28px) 320px 1fr;
 }
 
-div.grid > div.btn-group {
-    display: grid;
-    grid-column: 1 / -1;
+div.grid2 {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 28px 1fr 28px;
+	row-gap: 10px;
+}
+
+div.grid2>div.right-align {
+	text-align: right;
+}
+
+div.grid>div.btn-group {
+	display: grid;
+	grid-column: 1/-1;
 }
 
 div.grid div.right-align {
-    text-align: right;
+	text-align: right;
 }
 
 label {
-    padding-left: 10px;
+	padding-left: 10px;
 }
 
-button,
-input,
-textarea {
-    padding: 10px;
+button, input, textarea {
+	padding: 10px;
 }
 
 #content {
-    height: 300px;
+	height: 300px;
 }
 
-a:link,
-a:hover,
-a:visited,
-a:active {
-    color: #333;
-    text-decoration: none;
+a:link, a:hover, a:visited, a:active {
+	color: #333;
+	text-decoration: none;
+}
+
+table.table {
+	border-collapse: collapse;
+	border: 1px solid #DDD;
+}
+
+table.table>thead>tr {
+	background-color: #FFF;
+}
+
+table.table>thead th {
+	padding: 10px;
+	color: #333;
+}
+
+table.table th, table.table td {
+	border-right: 1px solid #F0F0F0;
+}
+
+table.table th:last-child, table.table td:last-child {
+	border-right: none;
+}
+
+table.table>tbody tr:nth-child(odd) {
+	background-color: #FAFAFA;
+}
+
+table.table>tbody td {
+	padding: 10px;
+	color: #333;
 }

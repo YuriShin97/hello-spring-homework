@@ -2,6 +2,7 @@ package com.ktdsuniversity.edu.hellospringhomework.bbs.dao.impl;
 
 import com.ktdsuniversity.edu.hellospringhomework.bbs.dao.BoardDao;
 import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.BoardVO;
+import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.ModifyBoardVO;
 import com.ktdsuniversity.edu.hellospringhomework.bbs.vo.WriteBoardVO;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
@@ -49,5 +50,15 @@ public class BoardDaoImpl extends SqlSessionDaoSupport implements BoardDao {
     @Override
     public BoardVO selectOneBoard(int id) {
         return this.getSqlSession().selectOne("com.ktdsuniversity.edu.hellospringhomework.bbs.dao.BoardDao.selectOneBoard", id);
+    }
+    
+    @Override
+    public int updateOneBoard(ModifyBoardVO modifyBoardVO) {
+    	return this.getSqlSession().update("com.ktdsuniversity.edu.hellospringhomework.bbs.dao.BoardDao.updateOneBoard", modifyBoardVO);
+    }
+    
+    @Override
+    public int deleteOneBoard(int id) {
+    	return this.getSqlSession().delete("com.ktdsuniversity.edu.hellospringhomework.bbs.dao.BoardDao.deleteOneBoard", id);
     }
 }
