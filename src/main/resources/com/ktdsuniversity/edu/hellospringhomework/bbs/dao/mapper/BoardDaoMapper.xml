@@ -49,7 +49,7 @@
         , NULL)
     </insert>
     <!-- 게시물의 조회수 증가 SQL 정의 -->
-    <update id="increaseViewCount"
+    <update id="updateViewCount"
             parameterType="_int">
         UPDATE BOARD
         SET VIEW_CNT = VIEW_CNT + 1

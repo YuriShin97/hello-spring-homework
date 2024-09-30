@@ -39,7 +39,7 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public BoardVO selectOneBoard(int id) {
         // 조회수를 증가시킴
-        int updateCount = boardDao.increaseViewCount(id);
+        int updateCount = boardDao.updateViewCount(id);
 
         // 조회수를 증가시킨 수가 0이면 예외를 던짐
         if (updateCount == 0) {

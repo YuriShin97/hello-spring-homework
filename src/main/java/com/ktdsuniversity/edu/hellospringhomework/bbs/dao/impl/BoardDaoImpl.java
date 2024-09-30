@@ -41,7 +41,7 @@ public class BoardDaoImpl extends SqlSessionDaoSupport implements BoardDao {
 
     // 게시판 글의 조회수를 증가시키는 메서드. 조회수를 증가시키는 대상인 게시글 ID를 파라미터로 받음
     @Override
-    public int increaseViewCount(int id) {
+    public int updateViewCount(int id) {
         return this.getSqlSession().update("com.ktdsuniversity.edu.hellospringhomework.bbs.dao.BoardDao.increaseViewCount", id);
     }
 

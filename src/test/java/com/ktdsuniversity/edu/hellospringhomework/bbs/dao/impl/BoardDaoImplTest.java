@@ -61,7 +61,7 @@ public class BoardDaoImplTest {
 
     // 게시글의 조회수를 증가시키는 기능에 대한 테스트 메소드
     @Test
-    public void testIncreaseViewCount(){
+    public void testUpdateViewCount(){
         int boardId = 4; // 테스트할 게시글 ID
 
         // 조회수를 증가시키기 전 해당 게시글 정보를 가져옵니다.
@@ -70,7 +70,7 @@ public class BoardDaoImplTest {
         System.out.println("조회수 증가 전: " + viewBeforeIncrease); // 증가 전 조회수 출력
 
         // 게시글의 조회수를 증가시킵니다.
-        boardDao.increaseViewCount(boardId);
+        boardDao.updateViewCount(boardId);
 
         // 조회수 증가 후 해당 게시글 정보를 다시 가져옵니다.
         BoardVO afterIncreaseViewCount = this.boardDao.selectOneBoard(boardId);
